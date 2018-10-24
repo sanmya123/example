@@ -11,7 +11,7 @@ var configuration = Argument("configuration", "Release");
 //////////////////////////////////////////////////////////////////////
 
 // Define directories.
-var buildDir = Directory("./src/Example/bin") + Directory(configuration);
+var buildDir = Directory("C:\somi") + Directory(configuration);
 
 //////////////////////////////////////////////////////////////////////
 // TASKS
@@ -52,7 +52,7 @@ Task("Run-Unit-Tests")
     .IsDependentOn("Build")
     .Does(() =>
 {
-    NUnit3("./src/**/bin/" + configuration + "/*.Tests.dll", new NUnit3Settings {
+    NUnit3("C:\somi" + configuration + "/*.Tests.dll", new NUnit3Settings {
         NoResults = true
         });
 });
